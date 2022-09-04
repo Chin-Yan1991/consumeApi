@@ -1,0 +1,36 @@
+{
+  "name": "consumeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "restart": "rimraf dist && yarn build && yarn start",
+    "dev": "nodemon -L --watch src --watch dist -e ts,json --exec yarn restart"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/joi": "^17.2.3",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.7.14",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "morgan": "^1.10.0"
+  }
+}
