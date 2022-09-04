@@ -5,7 +5,7 @@ import CustomLog from "./customlog"
 const payloadValidator = (schema:Schema,payload:any) => {
     const {error, value} = schema.validate(payload)
     if(error) {
-        CustomLog.Red(error.details[0].message)
+        CustomLog.Magenta(error.details[0].message)
         return {error:error.details[0].message, validatedPayload:null}
     }else{
          return {error:null, validatedPayload:value}

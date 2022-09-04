@@ -1,4 +1,4 @@
-
+import morgan from "morgan";
 export default class CustomLog{
     static Red(...text:any){
         console.log("\x1b[31m%s\x1b[0m",...text);
@@ -19,3 +19,13 @@ export default class CustomLog{
         console.log("\x1b[36m%s\x1b[0m", ...text);
     }
 }
+
+export const customMorgan = () => {
+    let config = "";
+    config +=  "\x1b[33m :method \x1b[0m ";
+    config += "\x1b[36m :url \x1b[0m ";
+    config +=  "\x1b[32m :status \x1b[0m ";
+    config += "\x1b[34m :res[content-length] - :response-time ms \x1b[0m ";
+    return morgan(config);
+}
+

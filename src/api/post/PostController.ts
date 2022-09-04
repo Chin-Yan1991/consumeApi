@@ -51,10 +51,7 @@ export const findPostByFilter = async(req:Request, res:Response, next:NextFuncti
         if(total_number_of_comments) data = data.filter(row=> row.total_number_of_comments == total_number_of_comments);
         if(post_body) {
             const regex = new RegExp(post_body, 'gi');
-            data = data.filter(row=>{
-                const found = row.post_body.match(regex)
-                return found
-            });
+            data = data.filter(row=>row.post_body.match(regex));
         };
         
         res.json({ status:200, message:"list post successfully", data, error:null}).status(200);
